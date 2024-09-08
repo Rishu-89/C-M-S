@@ -1,5 +1,6 @@
 import axios from 'axios';
 import React, { useState } from 'react';
+<<<<<<< HEAD
 import { json, useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import Layout from '../layout/Layout'
@@ -8,6 +9,13 @@ import { useAuth } from '../context/authContext';
 const Login = () => {
 
   let [auth,setAuth]= useAuth();
+=======
+import { useNavigate } from 'react-router-dom';
+import { toast } from 'react-toastify';
+
+const Login = () => {
+
+>>>>>>> 3d499b9546485dafc73fa5a0b67f92c91966f5da
   let navigate=useNavigate()
 let [email,setEmail]=useState("");
 let [password,setPassword]=useState("");
@@ -20,10 +28,13 @@ let handelSubmit=async(e)=>{
      })
      if(res.data.success){
       toast.success(res.data.message);
+<<<<<<< HEAD
       
       setAuth({...auth,token:res.data.token,user:res.data.user})
       localStorage.setItem("auth",JSON.stringify(res.data));
      
+=======
+>>>>>>> 3d499b9546485dafc73fa5a0b67f92c91966f5da
        navigate('/')
      }
     else{
@@ -37,7 +48,11 @@ let handelSubmit=async(e)=>{
 
   return (
     <>
+<<<<<<< HEAD
     <Layout>     <section className="py-10 bg-gray-50 sm:py-16 lg:py-24">
+=======
+      <section className="py-10 bg-gray-50 sm:py-16 lg:py-24">
+>>>>>>> 3d499b9546485dafc73fa5a0b67f92c91966f5da
         <div className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
           <div className="max-w-2xl mx-auto text-center">
             <h2 className="text-3xl font-bold leading-tight text-black sm:text-4xl lg:text-5xl">Welcome Back!</h2>
@@ -150,8 +165,11 @@ let handelSubmit=async(e)=>{
           </div>
         </div>
       </section>
+<<<<<<< HEAD
       </Layout>
  
+=======
+>>>>>>> 3d499b9546485dafc73fa5a0b67f92c91966f5da
     </>
   );
 };
