@@ -2,10 +2,9 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import {toast} from 'react-toastify';
-<<<<<<< HEAD
+
 import Layout from '../layout/Layout';
-=======
->>>>>>> 3d499b9546485dafc73fa5a0b67f92c91966f5da
+
 
 const Register = () => {
   let navigate = useNavigate();
@@ -37,10 +36,8 @@ const Register = () => {
   }
 
   return (
-<<<<<<< HEAD
     <Layout>
-=======
->>>>>>> 3d499b9546485dafc73fa5a0b67f92c91966f5da
+
     <div className="flex items-center justify-center px-4 py-10 bg-white sm:px-6 lg:px-8 sm:py-16 lg:py-24">
       <div className="xl:w-full xl:max-w-sm 2xl:max-w-md xl:mx-auto">
         <h2 className="text-3xl font-bold leading-tight text-black sm:text-4xl">Sign up to Celebration</h2>
@@ -137,11 +134,10 @@ const Register = () => {
         </form>
       </div>
     </div>
-<<<<<<< HEAD
+
     </Layout>
-=======
->>>>>>> 3d499b9546485dafc73fa5a0b67f92c91966f5da
-  );
-}
+  )
+};
+
 
 export default Register;

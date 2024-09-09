@@ -68,10 +68,7 @@ if(validatePassword){
  return res.status(200).send({
   message:"Login sucessfull",
   success:true,
-<<<<<<< HEAD
   user,
-=======
->>>>>>> 3d499b9546485dafc73fa5a0b67f92c91966f5da
   token
  })
 }

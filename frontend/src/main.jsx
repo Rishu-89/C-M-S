@@ -17,7 +17,7 @@ createRoot(document.getElementById('root')).render(
 
 
   <ToastContainer/>
-    <App />
+    
    
 
   </BrowserRouter>
