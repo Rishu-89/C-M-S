@@ -8,6 +8,8 @@ import PageNotFound from "./components/pages/PageNotFound"
 import HomePage from "./components/pages/HomePage"
 import Write from "./components/pages/Write"
 import PrivateRoute from "./components/pages/PrivateRoute"
+import Dashboard from "./components/pages/Dashboard"
+import EditBlog from "./components/pages/EditBlog"
 
 
 
@@ -24,12 +26,14 @@ export default function App() {
 
 <Routes>
 
-  <Route path="/write" element={<PrivateRoute/>} >
+  <Route path="/user" element={<PrivateRoute/>} >
    <Route path="" element={<Write/>}></Route>
+   <Route path="dashBoard" element={<Dashboard/>}></Route>
+   <Route path="edit/:id" element={<EditBlog/>}></Route>
   </Route>
   <Route path="/" element={<HomePage/>}></Route>
-
-  <Route path="/" element={<Layout/>}></Route>
+ 
+ 
 
   <Route path="/register" element={<Register/>} ></Route>
   <Route path="/login" element={<Login/>} ></Route>

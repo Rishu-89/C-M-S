@@ -2,7 +2,8 @@ import jwt from 'jsonwebtoken'
  export let isLogin=(req,res,next)=>{
 
   try {
-    let decode=jwt.verify(req.headers.authorization,"kjhgfds");
+   
+    let decode= jwt.verify(req.headers.authorization,"kjhgfds");
     if(decode){
  
       req.user=decode;
@@ -18,6 +19,7 @@ import jwt from 'jsonwebtoken'
 
   } catch (error) {
     console.log(error)
+    console.log("error here")
   }   
 
 }

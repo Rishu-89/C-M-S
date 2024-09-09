@@ -38,7 +38,7 @@ const Navbar = () => {
             Read
           </Link>
 
-          <Link to="/write" title="" className="text-base font-medium text-black transition-all duration-200 hover:text-blue-600 focus:text-blue-600">
+          <Link to="/user" title="" className="text-base font-medium text-black transition-all duration-200 hover:text-blue-600 focus:text-blue-600">
             Lets Write
           </Link>
 
@@ -52,7 +52,7 @@ const Navbar = () => {
         </div>
 
 {auth?.token ? <><div className="hidden lg:flex lg:items-center lg:space-x-10">
-          <Link to="/" title="" className="text-base font-medium text-black transition-all duration-200 hover:text-blue-600 focus:text-blue-600">
+          <Link to="/user/dashBoard" title="" className="text-base font-medium text-black transition-all duration-200 hover:text-blue-600 focus:text-blue-600">
             {auth.user.name}
           </Link>
 
