@@ -140,3 +140,72 @@ export const deleteBlog=async(req,res)=>{
     })
   }
 }
+
+
+
+export const getHomePageBlog=async(req,res)=>{
+  try {
+   
+
+    
+    const blogs = await blogSchema.find({}).select("-photo").populate('author', 'name') 
+
+     
+   return res.status(200).send({
+      blogs
+    });
+  } catch (error) {
+    console.log(error)
+    res.status(500).json({ message: 'Error fetching blogs', error });
+  }
+
+}
+
+
+export const getPhoto=async(req,res)=>{
+ 
+ try {
+  let blog=await blogSchema.findById(req.params.id).select("photo");
+
+  if(blog.photo.data){
+    res.set("Content-Type",blog.photo.contentType);
+    return res.status(200).send(blog.photo.data)
+    
+  }
+  
+ } catch (error) {
+  console.log(error)
+  return res.status(500).send(
+    {
+      message:"Error while getting message",
+      success:false
+    }
+  )
+ }
+
+
+   
+}
+
+
+
+export const searchPriductController=async(req,res)=>{
+  try {
+    let keyword=req.params.search;
+
+    let blogs=await blogSchema.find({
+      
+     $or: [
+             {title :{$regex:keyword , $options:"i"}},
+             {content :{$regex:keyword, $options:"i"}},
+            //  {author :{$regex:keyword, $options:"i"} }
+      ]
+
+    }).select("-photo")
+
+return res.json(blogs);
+    
+  } catch (error) {
+    console.log(error)
+  }
+}

@@ -61,7 +61,7 @@ const EditBlog = () => {
 
       if (res?.data?.success) {
         toast.success('Blog Updated  Successfully');
-        navigate('/');
+        navigate('/user/dashboard');
       }
     } catch (error) {
       console.log(error);

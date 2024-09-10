@@ -1,49 +1,3 @@
-// import React, { useEffect, useState } from 'react'
-// import Layout from '../layout/Layout'
-// import axios from 'axios'
-// import { useAuth } from '../context/authContext'
-
-// const Dashboard = () => {
-
-//   let [blog,setBlog]=useState([])
-//   let [loading,setLoading]=useState(false);
-//   let [auth]=useAuth()
-
-// let getAllBlog=async ()=>{
-//   setLoading(true)
-//   axios.defaults.headers.common["Authorization"]=auth.token;
-//   let res=await axios.get(`${import.meta.env.VITE_HOST}api/v1/blog/allBlogs`);
-//   setBlog(res?.data.blogs || []);
-//   setLoading(false);
-// }
-
-
-
-//   useEffect(()=>{
-//      getAllBlog();
-//   },[])
-
-  
- 
-
-
-  
-
-
-
-//   return (
-//     <Layout>
-// {loading ?<> <h1>Loading....</h1> </>: <> {blog.length>0?<> {blog?.map((b,index)=>(<h1 key={index}>{b.title}</h1>))}</>:<><h1>No blog found</h1></>} </>}
-
-      
-    
-//     </Layout>
-//   )
-// }
-
-// export default Dashboard
-
-
 
 import React, { useEffect, useState } from 'react';
 import Layout from '../layout/Layout';
@@ -52,7 +6,7 @@ import { useAuth } from '../context/authContext';
 import { Link, useNavigate } from 'react-router-dom';
 
 const Dashboard = () => {
-  let navigate=useNavigate();
+
   const [blog, setBlog] = useState([]);
   const [loading, setLoading] = useState(false);
   const [auth] = useAuth();

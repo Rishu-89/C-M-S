@@ -1,11 +1,19 @@
 
-import React from 'react';
-import { Link, NavLink } from 'react-router-dom';
+import React, { useState } from 'react';
+import { Link, NavLink, useNavigate } from 'react-router-dom';
 import { useAuth } from '../context/authContext';
 import { toast } from 'react-toastify';
 
 const Navbar = () => {
+  let navigate=useNavigate()
   let [auth,setAuth]=useAuth();
+  let [search,setsearch]=useState('');
+
+  let handelSearch=()=>{
+      navigate(`/search/${search}`);
+  }
+
+
   let handelLogOut=()=>{
     setAuth({
       ...auth,user:null,token:""
@@ -42,12 +50,19 @@ const Navbar = () => {
             Lets Write
           </Link>
 
-          <a href="#" title="" className="text-base font-medium text-black transition-all duration-200 hover:text-blue-600 focus:text-blue-600">
+          <Link to="/aboutUs" title="" className="text-base font-medium text-black transition-all duration-200 hover:text-blue-600 focus:text-blue-600">
             AboutUs
-          </a>
+          </Link>
 
           <div className="w-full md:w-auto">
-            <input type="text" placeholder="Search..." className="p-2 border rounded w-full md:w-64" />
+            <input type="text" placeholder="Search..." className="p-2 border rounded w-full md:w-64" value={search} onChange={(e)=>{setsearch(e.target.value)}} 
+            onKeyDown={(e)=>{
+              if(e.key=="Enter"){
+                handelSearch()
+              }
+              
+            }}
+            />
           </div>
         </div>
 
