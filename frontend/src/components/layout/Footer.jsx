@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 const Footer = () => {
   return (
@@ -15,23 +16,23 @@ const Footer = () => {
             <div className="items-center mt-8 xl:mt-0 xl:flex xl:justify-end xl:space-x-8">
                 <ul className="flex flex-wrap items-center justify-center gap-x-8 gap-y-3 xl:justify-end">
                     <li>
-                        <a href="#" title="" className="text-sm text-white transition-all duration-200 hover:text-opacity-80 focus:text-opacity-80"> About </a>
+                        <Link to="/aboutUs" title="" className="text-sm text-white transition-all duration-200 hover:text-opacity-80 focus:text-opacity-80"> About </Link>
                     </li>
 
                     <li>
-                        <a href="#" title="" className="text-sm text-white transition-all duration-200 hover:text-opacity-80 focus:text-opacity-80"> Services </a>
+                        <Link to="/user" title="" className="text-sm text-white transition-all duration-200 hover:text-opacity-80 focus:text-opacity-80"> Lets Write </Link>
                     </li>
 
                     <li>
-                        <a href="#" title="" className="text-sm text-white transition-all duration-200 hover:text-opacity-80 focus:text-opacity-80"> Privacy Policy </a>
+                        <Link to="/aboutUs" title="" className="text-sm text-white transition-all duration-200 hover:text-opacity-80 focus:text-opacity-80"> Privacy Policy </Link>
                     </li>
 
                     <li>
-                        <a href="#" title="" className="text-sm text-white transition-all duration-200 hover:text-opacity-80 focus:text-opacity-80"> Terms & Conditions </a>
+                        <Link to="/user/dashboard" title="" className="text-sm text-white transition-all duration-200 hover:text-opacity-80 focus:text-opacity-80"> Your Blogs </Link>
                     </li>
 
                     <li>
-                        <a href="#" title="" className="text-sm text-white transition-all duration-200 hover:text-opacity-80 focus:text-opacity-80"> Support </a>
+                        <Link to="/" title="" className="text-sm text-white transition-all duration-200 hover:text-opacity-80 focus:text-opacity-80"> Support </Link>
                     </li>
                 </ul>
 

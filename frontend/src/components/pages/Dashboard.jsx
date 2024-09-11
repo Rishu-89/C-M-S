@@ -55,7 +55,7 @@ const Dashboard = () => {
                       className="block p-4 bg-white border border-gray-200 rounded-md shadow-md hover:bg-gray-100"
                     >
                       <h3 className="text-lg font-semibold text-gray-900">{b.title}</h3>
-                      <p className="text-gray-600">{b.content.slice(0, 100)}...</p> {/* Optionally show a snippet */}
+                      <p className="text-gray-600">{b.content.slice(0, 32)}...</p> {/* Optionally show a snippet */}
                     </Link>
                   ))
                 ) : (

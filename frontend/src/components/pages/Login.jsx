@@ -1,6 +1,6 @@
 import axios from 'axios';
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import Layout from '../layout/Layout'
 import { useAuth } from '../context/authContext';
@@ -38,8 +38,12 @@ let handelSubmit=async(e)=>{
     console.log(error)
     toast.error("Error in login")
    }
+
 }
 
+let handelClick=()=>{
+  toast.error("SomeThing went wrong Please register with new account")
+}
   return (
     <>
 
@@ -99,6 +103,7 @@ let handelSubmit=async(e)=>{
                           href="#"
                           title=""
                           className="text-sm font-medium text-orange-500 transition-all duration-200 hover:text-orange-600 focus:text-orange-600 hover:underline"
+                          onClick={handelClick}
                         >
                           Forgot password?
                         </a>
@@ -144,13 +149,13 @@ let handelSubmit=async(e)=>{
                     <div className="text-center">
                       <p className="text-base text-gray-600">
                         Don’t have an account?
-                        <a
-                          href="#"
+                        <Link
+                          to="/register"
                           title=""
                           className="font-medium text-orange-500 transition-all duration-200 hover:text-orange-600 hover:underline"
                         >
                           Create a free account
-                        </a>
+                        </Link>
                       </p>
                     </div>
                   </div>

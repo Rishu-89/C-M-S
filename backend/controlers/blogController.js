@@ -75,7 +75,7 @@ export const getAllBlogController=async(req,res)=>{
 export const getSingleBlogController=async(req,res)=>{
     try {
       let id=req.params.id;
-      let blog=await blogSchema.findOne({_id:id});
+      let blog=await blogSchema.findOne({_id:id}).populate('author', 'name');
 
       return res.status(201).send({
         blog,
